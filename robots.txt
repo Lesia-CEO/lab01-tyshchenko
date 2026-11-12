@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lesia-ceo.github.io/lab01-tyshchenko/sitemap.xml

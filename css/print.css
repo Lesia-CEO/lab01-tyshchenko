@@ -1,0 +1,86 @@
+
+/* Стилі для друку */
+@media print {
+
+    /* Загальні налаштування */
+    body {
+        background: white !important;
+        color: black !important;
+        font-family: "Times New Roman", serif;
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    /* Приховуємо навігацію та бічні панелі */
+    nav,
+    .page__sidebar,
+    header nav,
+    footer nav,
+    button,
+    .no-print {
+        display: none !important;
+    }
+
+    /* Макет в одну колонку */
+    .page {
+        display: block !important;
+        min-height: auto;
+    }
+
+    main,
+    .page__main,
+    .container {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Прибираємо декоративні ефекти */
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    img {
+        max-width: 100% !important;
+        height: auto;
+    }
+
+    /* Показуємо адреси зовнішніх посилань */
+    a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+        overflow-wrap: anywhere;
+    }
+
+    a {
+        color: black !important;
+        text-decoration: underline;
+    }
+
+    /* Налаштування розривів сторінок */
+    h1,
+    h2,
+    h3 {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+
+    img,
+    table,
+    blockquote {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    p {
+        orphans: 3;
+        widows: 3;
+    }
+
+    @page {
+        size: A4;
+        margin: 20mm;
+    }
+}
